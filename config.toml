@@ -1,0 +1,17 @@
+# SavePath
+#   the absolute path to PalServer server saves
+#   for Windows, value is like: "C:\\steamcmd\\steamapps\\common\\PalServer\\Pal\\Saved"
+SavePath = "/home/steam/Steam/steamapps/common/PalServer/Pal/Saved"
+
+# BackupPath
+#   the absolute path to where you want to keep the backup files
+#   for Windows, value is like: "C:\\palworld-save-backups"
+BackupPath = "/home/steam/palworld-save-backups"
+
+# DaysKeep
+#   how long of days that you want to keep the recently backups
+#   any backups earlier than the days will be deleted
+#   as default we set it to 5 days
+#
+#   for example, now is 20/01/2024 12:00:00, those backups created before 15/01/2024 12:00:00 will be deleted
+DaysKeep = 5
