@@ -29,7 +29,7 @@
 2. 创建配置文件 `/etc/palworld-save-backup/config.toml` 并填入下面的内容，参数根据你的情况更改
    ```toml
    # SavePath
-   #   《幻兽帕鲁》服务器的绝对路径
+   #   《幻兽帕鲁》服务器存档文件夹的绝对路径
    SavePath = "/home/steam/Steam/steamapps/common/PalServer/Pal/Saved"
    
    # BackupPath
@@ -64,8 +64,8 @@
 2. 创建配置文件 `C:\Users\administrator\palworld-save-backup-tool\windows-amd64\config.toml` 并填入下面的内容，参数根据你的情况更改
    ```toml
    # SavePath
-   #   《幻兽帕鲁》服务器的绝对路径
-   SavePath = "C:\\steamcmd\\steamapps\\common\\PalServer"
+   #   《幻兽帕鲁》服务器存档文件夹的绝对路径
+   SavePath = "C:\\steamcmd\\steamapps\\common\\PalServer\\Pal\\Saved"
    
    # BackupPath
    #   你要保存备份的目录的绝对路径，程序会自动创建它
