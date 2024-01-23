@@ -11,6 +11,7 @@ import (
 )
 
 const (
+	// timeLayout gives a time layout with `YYYYMMDDhhmm`
 	timeLayout = `200601021504`
 )
 
@@ -26,6 +27,7 @@ var config Config
 func main() {
 	_ = os.MkdirAll(config.BackupPath, os.ModePerm)
 
+	// create a backup folder base on current time
 	backupTime := time.Now().Format(timeLayout)
 	dirName := fmt.Sprintf("bak_%s", backupTime)
 	dirAbsPath := filepath.Join(config.BackupPath, dirName, "Saved")
@@ -38,6 +40,7 @@ func main() {
 	}
 	log.Info().Msgf("backup completed, save to %s", dirAbsPath)
 
+	// scan exist backups
 	backups, err := os.ReadDir(config.BackupPath)
 	if err != nil {
 		log.Err(err)
@@ -47,6 +50,7 @@ func main() {
 		return
 	}
 
+	// cleanup outdated backups base on the mod time
 	timeBefore := time.Now().Add(-1 * (time.Duration(config.DaysKeep) * 24 * time.Hour))
 	log.Info().Msg("backups:")
 	for _, backup := range backups {

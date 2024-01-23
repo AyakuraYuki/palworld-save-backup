@@ -39,7 +39,7 @@ release: check-env-release
 	mkdir -p $(BUILD_DIR)
 	cp LICENSE $(BUILD_DIR)/
 	cp README.md $(BUILD_DIR)/
-	CGO_ENABLED=0 GOOS=$(GOOS) GOARCH=$(GOARCH) go build -mod=vendor -ldflags "-s -w" -o $(BUILD_DIR)/$(NAME)$(ext) main.go
+	CGO_ENABLED=0 GOOS=$(GOOS) GOARCH=$(GOARCH) go build -mod=vendor -ldflags "-s -w" -o $(BUILD_DIR)/$(NAME)$(ext)
 	cd $(BASE_BUILD_DIR) ; $(archiveCmd)
 
 clean:

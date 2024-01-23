@@ -9,16 +9,16 @@ import (
 )
 
 const (
-	ConfigPath = "config.toml"
+	configPath = "config.toml"
 )
 
 func init() {
-	if _, err := os.Stat(ConfigPath); err != nil {
+	if _, err := os.Stat(configPath); err != nil {
 		log.Error().Msg("make sure you have placed the config.toml in the same path with palworld-save-backup.exe")
 		os.Exit(1)
 	}
 
-	bs, err := os.ReadFile(ConfigPath)
+	bs, err := os.ReadFile(configPath)
 	if err != nil {
 		log.Err(err)
 		os.Exit(1)
